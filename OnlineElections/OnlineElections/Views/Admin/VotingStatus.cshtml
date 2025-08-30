@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OnlineElections.ViewModel.VotingStatusViewModel>
+
+@{
+    ViewBag.Title = "Vote Status";
+}
+<div class="row">
+    <section>
+        <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+    </section>
+</div>
+<style>
+    .table-bordered {
+        border: 1px solid Black;
+    }
+
+        .table-bordered th, .table-bordered td {
+            border: 1px solid black;
+        }
+</style>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Voter ID</th>
+        <th>Name</th>
+        <th>Has Voted</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.VoterId)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            @*<td>@Html.DisplayFor(modelItem => item.HasVoted)</td>*@
+        <td>
+            @if (item.HasVoted)
+            {
+                <span>✔</span> 
+            }
+            else
+            {
+                <span>✖</span>
+            }
+        </td>
+
+        </tr>
+    }
+</table>

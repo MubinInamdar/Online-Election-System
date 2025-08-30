@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineElections.Models.Candidate>
+
+@{
+    ViewBag.Title = "CandidateList";
+}
+<div class="row">
+    <section>
+        <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+    </section>
+</div>
+<h2>Candidate List</h2>
+<style>
+    .table-bordered {
+        border: 1px solid Black;
+    }
+
+        .table-bordered th, .table-bordered td {
+            border: 1px solid black;
+        }
+</style>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Voter.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Voter.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCandidateList", new { id=item.CandidateID }) |
+            @Html.ActionLink("Details", "CandidateDetails", new { id=item.CandidateID }) |
+            @Html.ActionLink("Delete", "DeleteCandidate", new { id=item.CandidateID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,38 @@
+﻿@model OnlineElections.Models.Candidate
+
+@{
+    ViewBag.Title = "CandidateDetails";
+}
+<div class="row">
+    <section>
+        <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+    </section>
+</div>
+<h2>Candidate Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Voter.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voter.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateID }) |
+    @Html.ActionLink("Back to List", "CandidateList")
+</p>

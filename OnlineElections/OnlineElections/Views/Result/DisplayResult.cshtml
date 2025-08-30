@@ -1,0 +1,35 @@
+﻿@model List<OnlineElections.ViewModel.ElectionResultViewModel>
+<div class="row">
+    <section>
+        <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+    </section>
+</div>
+<h2>Election Results</h2>
+<h3> The Winning party is @ViewBag.WinningParty with the no. of votes they received are @ViewBag.WinningVotes</h3>
+
+<style>
+    .table-bordered {
+        border: 1px solid Black;
+    }
+
+        .table-bordered th, .table-bordered td {
+            border: 1px solid black;
+        }
+</style>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Party Name</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.PartyName</td>
+                <td>@result.VoteCount</td>
+            </tr>
+        }
+    </tbody>
+</table>

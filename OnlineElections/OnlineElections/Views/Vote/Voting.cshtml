@@ -1,0 +1,53 @@
+﻿@model OnlineElections.Models.Result
+
+@{
+    ViewBag.Title = "Voting";
+}
+<div class="row">
+    <section>
+        <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+    </section>
+</div>
+<h2>Voting</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VoterId, "Voter Id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <br>
+        <div class="col-md-10">
+            @ViewBag.VoterId
+            @Html.Hidden("VoterId", (int)ViewBag.VoterId)
+            @Html.ValidationMessageFor(model => model.VoterId, "", new { @class = "text-danger" })
+        </div>
+        <br>
+    </div>
+
+    @Html.LabelFor(model => model.EelectionId, "Party Name", htmlAttributes: new { @class = "control-label col-md-2" })
+    <br>
+    <div class="col-md-10">
+        @Html.DropDownListFor(model => model.EelectionId, (SelectList)ViewBag.PartyName, "Select a Party", new { @class = "form-control" })
+        @Html.Hidden("PartyName", "", new { id = "partyNameHidden" })
+        @Html.ValidationMessageFor(model => model.EelectionId, "", new { @class = "text-danger" })
+    </div>
+    <br>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Vote" class="btn btn-dark" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

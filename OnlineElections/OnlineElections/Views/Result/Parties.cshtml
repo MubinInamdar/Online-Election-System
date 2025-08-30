@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Parties";
+}
+
+
+<main aria-labelledby="title">
+    <div class="row">
+        <section style="display: flex; justify-content: space-between;">
+            <img id="title" src="~/Images/Img1.png" style="width:100%;max-width:300px">
+
+            @Html.ActionLink("Result", "DisplayResult", null, new { @class = "btn", @style = "text-decoration:;" })
+
+
+
+        </section>
+    </div>
+
+    <div class="row">
+        <section class="col-md-3" aria-labelledby="gettingStartedTitle">
+            <img src="~/Images/Rashtra.png" style="height:100%;max-height:225px"/>
+            <h2 id="gettingStartedTitle">Nationalist Congress Party</h2>
+            <p>
+                Shri Sharad Pawar is the founder and National President of the Nationalist Congress Party. 
+                Being one of the most influential and effective leaders of India, he has been widely admired and respected in Maharashtra and 
+                across the nation. Pawar Saheb has been working incesstantly throughout his life to bring agro-industrial vision of his political mentor.
+            </p>
+            <p><a class="btn btn-outline-dark" href="https://ncp.org.in/our-president/">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-3" aria-labelledby="gettingStartedTitle">
+            <img src="~/Images/Congress.png" />
+            <h2 id="gettingStartedTitle">Indian National Congress</h2>
+            <p>
+                The Indian National Congress (INC), colloquially the Congress Party or simply the Congress, is a political party in India with deep roots in most regions of India.
+                After Indian independence in 1947, Congress emerged as a catch-all and secular party, dominating Indian politics for the next 50 years.
+                The party's first Prime Minister, Pandit Jawaharlal Nehru.
+            </p>
+            <p><a class="btn btn-outline-dark" href="https://www.inc.in/">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-3" aria-labelledby="gettingStartedTitle">
+            <img src="~/Images/Aap.jpg" />
+            <h2 id="gettingStartedTitle">Aam Aadami Party</h2>
+            <p>
+                The Aam Aadmi Party was founded on 26 November 2012 by Arvind Kejriwal and his then-companions.Kejriwal has stated that the AAP refuses to be guided by ideologies and 
+                that they are entering politics to change the system, saying, "We are common men. If we find our solution in the left, we are happy to borrow it from there. If we find 
+                our solution in the right, we are happy to borrow it from there. 
+            </p>
+            <p><a class="btn btn-outline-dark" href="https://aamaadmiparty.org/">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-3" aria-labelledby="gettingStartedTitle">
+            <img src="~/Images/BJP.jpg" />
+            <h2 id="gettingStartedTitle">Bharatiya Janata Party</h2>
+            <p>
+                The Bharatiya Janata Party, which was founded in 1951 by Indian politician Shyama Prasad Mukherjee,
+                after he left Hindu Mahasabha to form a party as the political wing of RSS. After the Emergency of 1975–1977,
+                the Jana Sangh merged with several other political parties to form the Janata Party. The official ideology of 
+                the BJP is integral humanism, first formulated by Deendayal Upadhyaya in 1965. 
+            </p>
+            <p><a class="btn btn-outline-dark" href="https://www.bjp.org/home">Learn more &raquo;</a></p>
+        </section>
+    </div>
+</main>
